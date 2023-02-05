@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="bootstrap-3.3.7-dist/js/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $.get("findProvinceServlet",{},function (data) {
+                let province=$("#province")
+                $(data).each(function () {
+                    let option="<option name='"+this.id+"'>"+this.name+"</option> ";
+                    province.append(option);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<select id="province">
+    <option>请选择省份</option>
+</select>
+</body>
+</html>
